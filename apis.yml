@@ -25,6 +25,8 @@ apis:
   properties:
   - type: Documentation
     url: https://www.fbi.gov/wanted/api
+  - type: OpenAPI
+    url: openapi.yml
 maintainers:
 - FN: Kin Lane
   X-twitter: apievangelist
