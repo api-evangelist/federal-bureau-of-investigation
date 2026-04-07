@@ -1,6 +1,6 @@
 openapi: 3.1.0
 info:
-  title: FBI Wanted API
+  title: Federal Bureau of Investigation FBI Wanted API
   description: API for retrieving information about the FBI's Wanted program.
   version: 1.0.0
 servers:
@@ -8,7 +8,7 @@ servers:
 paths:
   /list:
     get:
-      summary: Retrieve list of FBI wanted individuals
+      summary: Federal Bureau of Investigation Retrieve list of FBI wanted individuals
       description: Fetches a list of FBI wanted individuals, with optional filters for field offices and paging.
       parameters:
         - name: field_offices
