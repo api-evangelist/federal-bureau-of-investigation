@@ -49,6 +49,8 @@ paths:
           description: No results found for the given query parameters.
         '500':
           description: Internal server error.
+      tags:
+        - List
 components:
   schemas:
     FBIWantedResponse:
@@ -85,3 +87,5 @@ components:
           description: List of FBI field offices related to the case.
           items:
             type: string
+tags:
+  - name: List
