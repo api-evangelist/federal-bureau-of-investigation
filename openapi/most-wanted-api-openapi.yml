@@ -1,7 +1,11 @@
 openapi: 3.1.0
 info:
-  title: Federal Bureau of Investigation FBI Wanted API
-  description: API for retrieving information about the FBI's Wanted program.
+  title: FBI Most Wanted
+  description: >-
+    The FBI Most Wanted API is designed to help developers easily get
+    information on the FBI Wanted program, including Ten Most Wanted
+    Fugitives, Most Wanted Terrorists, kidnappings and missing persons,
+    and seeking information cases.
   version: 1.0.0
 servers:
   - url: https://api.fbi.gov/wanted/v1

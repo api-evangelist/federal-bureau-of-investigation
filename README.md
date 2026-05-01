@@ -1,13 +1,13 @@
 # Federal Bureau of Investigation (federal-bureau-of-investigation)
-The Federal Bureau of Investigation (FBI) is the domestic intelligence and security service of the United States and its principal federal law enforcement agency.
+The Federal Bureau of Investigation (FBI) is the domestic intelligence and security service of the United States and its principal federal law enforcement agency. The FBI publishes public APIs covering its Most Wanted program and Uniform Crime Reporting (UCR) data through the Crime Data Explorer.
 
 **URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/federal-bureau-of-investigation/refs/heads/main/apis.yml)
 
 ## Scope
 
-- **Type:** Index 
-- **Position:** Consuming 
-- **Access:** 3rd-Party 
+- **Type:** Index
+- **Position:** Consumer
+- **Access:** 3rd-Party
 
 ## Tags:
 
@@ -15,16 +15,17 @@ The Federal Bureau of Investigation (FBI) is the domestic intelligence and secur
 
 ## Timestamps
 
-- **Created:** 2024-10-18 
-- **Modified:** 2026-03-16 
+- **Created:** 2024-10-18
+- **Modified:** 2026-04-28
 
 ## APIs
 
-### Most Wanted API
-The FBI Wanted API is designed to help developers easily get information on the FBI Wanted program.
+### FBI Most Wanted
+The FBI Most Wanted API is designed to help developers easily get information on the FBI Wanted program, including Ten Most Wanted Fugitives, Most Wanted Terrorists, kidnappings and missing persons, and seeking information cases. The API supports filtering by field office and pagination of results.
 
 **Human URL:** [https://www.fbi.gov/wanted/api](https://www.fbi.gov/wanted/api)
 
+**Base URL:** https://api.fbi.gov
 
 #### Tags:
 
@@ -33,11 +34,28 @@ The FBI Wanted API is designed to help developers easily get information on the 
 #### Properties
 
 - [Documentation](https://www.fbi.gov/wanted/api)
+- [OpenAPI](openapi/most-wanted-api-openapi.yml)
+
+### FBI Crime Data Explorer
+The FBI Crime Data Explorer (CDE) provides public access to Uniform Crime Reporting (UCR) data through a JSON API. The API exposes summary statistics, agency-level participation, offense and arrest counts, and hate crime, victimization, and law enforcement officer data drawn from the National Incident-Based Reporting System (NIBRS) and Summary Reporting System.
+
+**Human URL:** [https://crime-data-explorer.fbi.gov/](https://crime-data-explorer.fbi.gov/)
+
+**Base URL:** https://api.usa.gov/crime/fbi/cde
+
+#### Tags:
+
+ - Crime Data, Law Enforcement, Statistics, Uniform Crime Reporting
+
+#### Properties
+
+- [Documentation](https://crime-data-explorer.fbi.gov/pages/docApi)
+- [Portal](https://crime-data-explorer.fbi.gov/)
 
 ## Common Properties
 
 - [Website](https://www.fbi.gov/)
-- [Documentation](https://www.fbi.gov/wanted/api)
+- [Documentation](https://www.fbi.gov/services)
 
 ## Maintainers
 
