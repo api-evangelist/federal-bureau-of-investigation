@@ -1,0 +1,98 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: FBI Most Wanted
+  description: The FBI Most Wanted API is designed to help developers easily get information on the FBI Wanted program, including
+    Ten Most Wanted Fugitives, Most Wanted Terrorists, kidnappings and missing persons, and seeking information cases.
+  tags:
+  - Federal
+  - Bureau
+  - Of
+  - Investigation
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: federal-bureau-of-investigation
+    baseUri: https://api.fbi.gov/wanted/v1
+    description: FBI Most Wanted HTTP API.
+    resources:
+    - name: list
+      path: /list
+      operations:
+      - name: get-list
+        method: GET
+        description: Federal Bureau of Investigation Retrieve list of FBI wanted individuals
+        inputParameters:
+        - name: field_offices
+          in: query
+          type: string
+          description: Filter by specific FBI field offices (e.g., miami, new-york, los-angeles).
+        - name: page
+          in: query
+          type: integer
+          description: Specifies the page of results to return (used for pagination).
+        - name: sort_on
+          in: query
+          type: string
+          description: Specifies the field to sort results by (e.g., title, reward, etc.).
+        - name: sort_order
+          in: query
+          type: string
+          description: Specifies the order of the sorting (asc or desc).
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: federal-bureau-of-investigation-rest
+    description: REST adapter for FBI Most Wanted.
+    resources:
+    - path: /list
+      name: get-list
+      operations:
+      - method: GET
+        name: get-list
+        description: Federal Bureau of Investigation Retrieve list of FBI wanted individuals
+        call: federal-bureau-of-investigation.get-list
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: federal-bureau-of-investigation-mcp
+    transport: http
+    description: MCP adapter for FBI Most Wanted for AI agent use.
+    tools:
+    - name: get-list
+      description: Federal Bureau of Investigation Retrieve list of FBI wanted individuals
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: federal-bureau-of-investigation.get-list
+      with:
+        field_offices: tools.field_offices
+        page: tools.page
+        sort_on: tools.sort_on
+        sort_order: tools.sort_order
+      inputParameters:
+      - name: field_offices
+        type: string
+        description: Filter by specific FBI field offices (e.g., miami, new-york, los-angeles).
+      - name: page
+        type: integer
+        description: Specifies the page of results to return (used for pagination).
+      - name: sort_on
+        type: string
+        description: Specifies the field to sort results by (e.g., title, reward, etc.).
+      - name: sort_order
+        type: string
+        description: Specifies the order of the sorting (asc or desc).
+      outputParameters:
+      - type: object
+        mapping: $.
