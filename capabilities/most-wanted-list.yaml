@@ -1,29 +1,35 @@
 naftiko: 1.0.0-alpha2
 info:
-  label: FBI Most Wanted
-  description: The FBI Most Wanted API is designed to help developers easily get information on the FBI Wanted program, including
-    Ten Most Wanted Fugitives, Most Wanted Terrorists, kidnappings and missing persons, and seeking information cases.
+  label: FBI Most Wanted — List
+  description: 'FBI Most Wanted — List. 1 operations. Lead operation: Federal Bureau of Investigation Retrieve list of FBI
+    wanted individuals. Self-contained Naftiko capability covering one Federal Bureau Of Investigation business surface.'
   tags:
-  - Federal
-  - Bureau
-  - Of
-  - Investigation
-  - API
-  created: '2026-05-06'
-  modified: '2026-05-06'
+  - Federal Bureau Of Investigation
+  - List
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    FEDERAL_BUREAU_OF_INVESTIGATION_API_KEY: FEDERAL_BUREAU_OF_INVESTIGATION_API_KEY
 capability:
   consumes:
   - type: http
-    namespace: federal-bureau-of-investigation
+    namespace: most-wanted-list
     baseUri: https://api.fbi.gov/wanted/v1
-    description: FBI Most Wanted HTTP API.
+    description: FBI Most Wanted — List business capability. Self-contained, no shared references.
     resources:
     - name: list
       path: /list
       operations:
-      - name: get-list
+      - name: get
         method: GET
         description: Federal Bureau of Investigation Retrieve list of FBI wanted individuals
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: field_offices
           in: query
@@ -41,58 +47,48 @@ capability:
           in: query
           type: string
           description: Specifies the order of the sorting (asc or desc).
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
   exposes:
   - type: rest
+    namespace: most-wanted-list-rest
     port: 8080
-    namespace: federal-bureau-of-investigation-rest
-    description: REST adapter for FBI Most Wanted.
+    description: REST adapter for FBI Most Wanted — List. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
     resources:
-    - path: /list
-      name: get-list
+    - path: /v1/list
+      name: list
+      description: REST surface for list.
       operations:
       - method: GET
-        name: get-list
+        name: get
         description: Federal Bureau of Investigation Retrieve list of FBI wanted individuals
-        call: federal-bureau-of-investigation.get-list
+        call: most-wanted-list.get
+        with:
+          field_offices: rest.field_offices
+          page: rest.page
+          sort_on: rest.sort_on
+          sort_order: rest.sort_order
         outputParameters:
         - type: object
           mapping: $.
   - type: mcp
+    namespace: most-wanted-list-mcp
     port: 9090
-    namespace: federal-bureau-of-investigation-mcp
     transport: http
-    description: MCP adapter for FBI Most Wanted for AI agent use.
+    description: MCP adapter for FBI Most Wanted — List. One tool per consumed operation, routed inline through this capability's
+      consumes block.
     tools:
-    - name: get-list
+    - name: federal-bureau-investigation-retrieve-list
       description: Federal Bureau of Investigation Retrieve list of FBI wanted individuals
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: federal-bureau-of-investigation.get-list
+      call: most-wanted-list.get
       with:
         field_offices: tools.field_offices
         page: tools.page
         sort_on: tools.sort_on
         sort_order: tools.sort_order
-      inputParameters:
-      - name: field_offices
-        type: string
-        description: Filter by specific FBI field offices (e.g., miami, new-york, los-angeles).
-      - name: page
-        type: integer
-        description: Specifies the page of results to return (used for pagination).
-      - name: sort_on
-        type: string
-        description: Specifies the field to sort results by (e.g., title, reward, etc.).
-      - name: sort_order
-        type: string
-        description: Specifies the order of the sorting (asc or desc).
       outputParameters:
       - type: object
         mapping: $.
