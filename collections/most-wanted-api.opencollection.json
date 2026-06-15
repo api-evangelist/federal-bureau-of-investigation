@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "FBI Most Wanted",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Federal Bureau of Investigation Retrieve list of FBI wanted individuals",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.fbi.gov/wanted/v1/list",
+            "params": [
+              {
+                "name": "field_offices",
+                "value": "",
+                "type": "query",
+                "description": "Filter by specific FBI field offices (e.g., miami, new-york, los-angeles)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the page of results to return (used for pagination)."
+              },
+              {
+                "name": "sort_on",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the field to sort results by (e.g., title, reward, etc.)."
+              },
+              {
+                "name": "sort_order",
+                "value": "",
+                "type": "query",
+                "description": "Specifies the order of the sorting (asc or desc)."
+              }
+            ]
+          },
+          "docs": "Fetches a list of FBI wanted individuals, with optional filters for field offices and paging."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
