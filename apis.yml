@@ -5,7 +5,7 @@ description: >-
   The Federal Bureau of Investigation (FBI) is the domestic intelligence and security service of the United States and
   its principal federal law enforcement agency. The FBI publishes public APIs covering its Most Wanted program and
   Uniform Crime Reporting (UCR) data through the Crime Data Explorer.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - FBI
   - Federal Government
@@ -20,7 +20,7 @@ apis:
       The FBI Most Wanted API is designed to help developers easily get information on the FBI Wanted program, including
       Ten Most Wanted Fugitives, Most Wanted Terrorists, kidnappings and missing persons, and seeking information cases.
       The API supports filtering by field office and pagination of results.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.fbi.gov/wanted/api
     baseURL: https://api.fbi.gov
     tags:
@@ -39,7 +39,7 @@ apis:
       The API exposes summary statistics, agency-level participation, offense and arrest counts, and hate crime,
       victimization, and law enforcement officer data drawn from the National Incident-Based Reporting System (NIBRS)
       and Summary Reporting System.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://crime-data-explorer.fbi.gov/
     baseURL: https://api.usa.gov/crime/fbi/cde
     tags:
