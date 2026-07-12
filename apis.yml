@@ -53,6 +53,8 @@ apis:
       - type: Portal
         url: https://crime-data-explorer.fbi.gov/
 common:
+  - type: DomainSecurity
+    url: security/federal-bureau-of-investigation-domain-security.yml
   - type: GitHubOrganization
     url: https://github.com/fbi-cde
   - type: LinkedIn
