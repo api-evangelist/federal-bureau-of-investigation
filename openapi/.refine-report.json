@@ -1,0 +1,14 @@
+{
+  "provider": "federal-bureau-of-investigation",
+  "sources": [
+    "federal-bureau-of-investigation-list-api-openapi.yml"
+  ],
+  "outputs": [
+    "federal-bureau-of-investigation-list-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
