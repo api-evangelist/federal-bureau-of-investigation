@@ -24,7 +24,7 @@ tags:
 created: '2024-10-18'
 modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/federal-bureau-of-investigation/refs/heads/main/apis.yml
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: federal-bureau-of-investigation:crime-data-explorer
   name: FBI Crime Data Explorer
