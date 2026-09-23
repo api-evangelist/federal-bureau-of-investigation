@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: FBI Most Wanted List API
   description: The FBI Most Wanted API is designed to help developers easily get information on the FBI Wanted program, including Ten Most Wanted Fugitives, Most Wanted Terrorists, kidnappings and missing persons, and seeking information cases.
@@ -55,22 +55,10 @@ paths:
           description: Internal server error.
       tags:
       - List
+      operationId: getList
+      x-operation-id-source: derived
 components:
   schemas:
-    FBIWantedResponse:
-      type: object
-      properties:
-        total:
-          type: integer
-          description: Total number of results.
-        page:
-          type: integer
-          description: The current page number.
-        items:
-          type: array
-          description: List of FBI wanted individuals.
-          items:
-            $ref: '#/components/schemas/FBIWantedItem'
     FBIWantedItem:
       type: object
       properties:
@@ -91,3 +79,17 @@ components:
           description: List of FBI field offices related to the case.
           items:
             type: string
+    FBIWantedResponse:
+      type: object
+      properties:
+        total:
+          type: integer
+          description: Total number of results.
+        page:
+          type: integer
+          description: The current page number.
+        items:
+          type: array
+          description: List of FBI wanted individuals.
+          items:
+            $ref: '#/components/schemas/FBIWantedItem'
