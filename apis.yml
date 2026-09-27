@@ -31,10 +31,11 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/federal-bureau-of-investigation.png
 tags:
   - FBI
-  - Federal-Government
+  - Federal Government
 tags_raw:
   - FBI
   - Federal Government
+  - Federal-Government
 created: '2024-10-18'
 modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/federal-bureau-of-investigation/refs/heads/main/apis.yml
