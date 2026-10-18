@@ -52,6 +52,11 @@ apis:
   humanURL: https://crime-data-explorer.fbi.gov/
   baseURL: https://api.usa.gov/crime/fbi/cde
   tags:
+  - Crime
+  - Law Enforcement
+  - Statistics
+  - Uniform Crime Reporting
+  tags_raw:
   - Crime Data
   - Law Enforcement
   - Statistics
