@@ -1,0 +1,12 @@
+{
+ "url": "https://api.fbi.gov/openapi.json",
+ "final": "https://api.fbi.gov/openapi.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 14719,
+ "sha256": "47dad4f30a1e6314ba94f011a3130c3cfe0f71f2fbbe1a256dfa0f0fb8c68ba4",
+ "fetched_at": "2026-10-19",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "re-archived: the provider's current document replaced a stale archive (roadmap#793); the old files are in openapi/_superseded/2026-10-19-stale"
+}

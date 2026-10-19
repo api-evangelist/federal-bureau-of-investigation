@@ -66,16 +66,28 @@ apis:
     url: https://crime-data-explorer.fbi.gov/pages/docApi
   - type: Portal
     url: https://crime-data-explorer.fbi.gov/
-- aid: federal-bureau-of-investigation:federal-bureau-of-investigation-list-api
-  name: Federal Bureau of Investigation List API
-  description: The List API from Federal Bureau of Investigation — 1 operation(s) for list.
-  humanURL: https://www.fbi.gov/wanted/api
-  baseURL: https://api.fbi.gov
+- aid: federal-bureau-of-investigation:federal-bureau-of-investigation-artcrimes-api
+  name: Federal Bureau of Investigation Artcrimes API
+  description: Art Crime API
+  humanURL: https://crime-data-explorer.fbi.gov/
+  baseURL: https://api.usa.gov/crime/fbi/cde
   tags:
-  - List
+  - artcrimes
   properties:
   - type: OpenAPI
-    url: openapi/federal-bureau-of-investigation-list-api-openapi.yml
+    url: openapi/federal-bureau-of-investigation-artcrimes-api-openapi.yml
+  - type: Documentation
+    url: https://www.fbi.gov/wanted/api
+- aid: federal-bureau-of-investigation:federal-bureau-of-investigation-wanted-api
+  name: Federal Bureau of Investigation Wanted API
+  description: Wanted API
+  humanURL: https://crime-data-explorer.fbi.gov/
+  baseURL: https://api.usa.gov/crime/fbi/cde
+  tags:
+  - wanted
+  properties:
+  - type: OpenAPI
+    url: openapi/federal-bureau-of-investigation-wanted-api-openapi.yml
   - type: Documentation
     url: https://www.fbi.gov/wanted/api
 common:

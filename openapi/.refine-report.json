@@ -1,20 +1,23 @@
 {
   "provider": "federal-bureau-of-investigation",
   "sources": [
-    "_original/most-wanted-api-openapi.yml"
+    "_original/federal-bureau-of-investigation-openapi.json"
   ],
   "outputs": [
-    "federal-bureau-of-investigation-list-api-openapi.yml"
+    "federal-bureau-of-investigation-artcrimes-api-openapi.yml",
+    "federal-bureau-of-investigation-wanted-api-openapi.yml"
   ],
   "archived": [],
-  "errors": [],
+  "errors": [
+    "federal-bureau-of-investigation-openapi.json: dangling $ref: #/definitions/Art Crime",
+    "federal-bureau-of-investigation-openapi.json: dangling $ref: #/definitions/Wanted Person",
+    "federal-bureau-of-investigation-openapi.json: dangling $ref: #/definitions/Wanted Result Set"
+  ],
   "warnings": [],
   "notes": [
     "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
-    "most-wanted-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
-    "apis.yml register: already-registered"
+    "federal-bureau-of-investigation-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+2 apis, 3 total)"
   ],
-  "skipped": [
-    "federal-bureau-of-investigation-list-api-openapi.yml: previously refined output, superseded by openapi/_original/"
-  ]
+  "skipped": []
 }

@@ -1,0 +1,319 @@
+openapi: 3.2.0
+info:
+  title: FBI Artcrimes API
+  version: 4.x
+  description: Art Crime API
+tags:
+- name: artcrimes
+  description: Art Crime API
+paths:
+  /@artcrimes:
+    get:
+      tags:
+      - artcrimes
+      summary: Get listing of national art theft
+      description: https://api.fbi.gov/artcrimes https://api.fbi.gov/artcrimes/list
+      operationId: _artcrimes__artcrimes_get
+      parameters:
+      - name: title
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Title
+      - name: crimeCategory
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Crimecategory
+      - name: maker
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Maker
+      - name: materials
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Materials
+      - name: measurements
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Measurements
+      - name: period
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Period
+      - name: additionalData
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Additionaldata
+      - name: idInAgency
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Idinagency
+      - name: referenceNumber
+        in: query
+        required: false
+        schema:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Referencenumber
+      - name: pageSize
+        in: query
+        required: false
+        schema:
+          type: integer
+          exclusiveMinimum: 0
+          default: 20
+          title: Pagesize
+      - name: page
+        in: query
+        required: false
+        schema:
+          type: integer
+          exclusiveMinimum: 0
+          default: 1
+          title: Page
+      - name: sort_order
+        in: query
+        required: false
+        schema:
+          enum:
+          - asc
+          - desc
+          type: string
+          default: desc
+          title: Sort Order
+      - name: sort_on
+        in: query
+        required: false
+        schema:
+          enum:
+          - publication
+          - modified
+          - _score
+          type: string
+          default: modified
+          title: Sort On
+      responses:
+        '200':
+          description: List Art Crimes
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArtCrimeResultSet'
+        '404':
+          description: Resource not found
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /@artcrimes/{id}:
+    get:
+      tags:
+      - artcrimes
+      summary: Retrieve information on an art crime
+      description: https://api.fbi.gov/artcrime/v1/object/{id} is backward compatible alias
+      operationId: _artcrimes__id___artcrimes__id__get
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Id
+      responses:
+        '200':
+          description: Get data for art crime
+          content:
+            application/json:
+              schema: {}
+          schema:
+            $ref: '#/definitions/Art Crime'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    ArtCrimeResultSet:
+      properties:
+        total:
+          type: integer
+          title: Total
+          default: 0
+        page:
+          type: integer
+          title: Page
+          default: 1
+        items:
+          anyOf:
+          - items:
+              $ref: '#/components/schemas/ArtCrime'
+            type: array
+          - type: 'null'
+          title: Items
+          default: []
+      type: object
+      title: ArtCrimeResultSet
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    ArtCrimeImage:
+      properties:
+        original:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Original
+        thumb:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Thumb
+      type: object
+      title: ArtCrimeImage
+    ArtCrime:
+      properties:
+        pathId:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Pathid
+        uid:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Uid
+        title:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Title
+        description:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Description
+        images:
+          anyOf:
+          - items:
+              $ref: '#/components/schemas/ArtCrimeImage'
+            type: array
+          - type: 'null'
+          title: Images
+          default: []
+        crimeCategory:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Crimecategory
+        maker:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Maker
+        materials:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Materials
+        measurements:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Measurements
+        period:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Period
+        additionalData:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Additionaldata
+        modified:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Modified
+        publication:
+          anyOf:
+          - type: string
+            format: date-time
+          - type: 'null'
+          title: Publication
+        path:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Path
+        referenceNumber:
+          anyOf:
+          - type: string
+          - type: 'null'
+          title: Referencenumber
+      type: object
+      title: ArtCrime
