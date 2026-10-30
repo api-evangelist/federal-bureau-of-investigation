@@ -1,4 +1,4 @@
-# Federal Bureau of Investigation (federal-bureau-of-investigation)
+# Federal Bureau of Investigation
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,73 +66,116 @@
 
 The Federal Bureau of Investigation (FBI) is the domestic intelligence and security service of the United States and its principal federal law enforcement agency. The FBI publishes public APIs covering its Most Wanted program and Uniform Crime Reporting (UCR) data through the Crime Data Explorer.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/federal-bureau-of-investigation/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/federal-bureau-of-investigation/refs/heads/main/apis.yml)
+**Areas:** FBI · Federal Government
 
-## Scope
+## Federal Bureau of Investigation on APIs.io
 
-- **Type:** Index
+Everything profiled for Federal Bureau of Investigation is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/federal-bureau-of-investigation/](https://apis.io/providers/federal-bureau-of-investigation/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- FBI
-- Federal Government
+- [FBI Crime Data Explorer](https://apis.io/apis/federal-bureau-of-investigation/crime-data-explorer/) — The FBI Crime Data Explorer (CDE) provides public access to Uniform Crime Reporting (UCR) data through a JSON API. The API exposes summary statistics,…
+- [Federal Bureau of Investigation List API](https://apis.io/apis/federal-bureau-of-investigation/federal-bureau-of-investigation-list-api/) — The List API from Federal Bureau of Investigation — 1 operation(s) for list.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-10-18
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### FBI Most Wanted
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The FBI Most Wanted API is designed to help developers easily get information on the FBI Wanted program, including Ten Most Wanted Fugitives, Most Wanted Terrorists, kidnappings and missing persons, and seeking information cases. The API supports filtering by field office and pagination of results.
+- [Federal Bureau Of Investigation Agentic Access](https://apis.io/agentic-access/federal-bureau-of-investigation/federal-bureau-of-investigation-agentic-access/)
 
-- **Human URL:** [https://www.fbi.gov/wanted/api](https://www.fbi.gov/wanted/api)
-- **Base URL:** `https://api.fbi.gov`
+#### Collections (2)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Criminals
-- Law Enforcement
-- Most Wanted
+- [FBI Most Wanted List API](https://apis.io/collections/federal-bureau-of-investigation/open-federal-bureau-of-investigation-list-api/)
+- [FBI Most Wanted](https://apis.io/collections/federal-bureau-of-investigation/open-most-wanted-api/)
 
-#### Properties
+#### Security (1)
 
-- [Documentation](https://www.fbi.gov/wanted/api)
-- [OpenAPI](openapi/most-wanted-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/most-wanted-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/most-wanted-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-### FBI Crime Data Explorer
+- [Federal Bureau Of Investigation Domain Security](https://apis.io/security/federal-bureau-of-investigation/federal-bureau-of-investigation-domain-security/)
 
-The FBI Crime Data Explorer (CDE) provides public access to Uniform Crime Reporting (UCR) data through a JSON API. The API exposes summary statistics, agency-level participation, offense and arrest counts, and hate crime, victimization, and law enforcement officer data drawn from the National Incident-Based Reporting System (NIBRS) and Summary Reporting System.
+#### Plans and pricing (1)
 
-- **Human URL:** [https://crime-data-explorer.fbi.gov/](https://crime-data-explorer.fbi.gov/)
-- **Base URL:** `https://api.usa.gov/crime/fbi/cde`
+Published plans, tiers and prices.
 
-#### Tags
+- [Federal Bureau Of Investigation Plans Pricing](https://apis.io/plans/federal-bureau-of-investigation/federal-bureau-of-investigation-plans-pricing/)
 
-- Crime Data
-- Law Enforcement
-- Statistics
-- Uniform Crime Reporting
+#### Rate limits (1)
 
-#### Properties
+Published request limits.
 
-- [Documentation](https://crime-data-explorer.fbi.gov/pages/docApi)
-- [Portal](https://crime-data-explorer.fbi.gov/)
-- [Postman Collection](collections/most-wanted-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/most-wanted-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Federal Bureau Of Investigation Rate Limits](https://apis.io/rate-limits/federal-bureau-of-investigation/federal-bureau-of-investigation-rate-limits/)
 
-## Common Properties
+#### FinOps (1)
 
-- [GitHub Organization](https://github.com/fbi-cde)
-- [LinkedIn](https://www.linkedin.com/company/fbi)
+What the API costs to run, by operation.
+
+- [Federal Bureau Of Investigation Finops](https://apis.io/finops/federal-bureau-of-investigation/federal-bureau-of-investigation-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.fbi.gov/)
 - [Documentation](https://www.fbi.gov/services)
+- [Blog](https://www.fbi.gov/news/stories)
+- [GitHub](https://github.com/fbi-cde)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 23.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 44.7 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 7.9 |
+
+**Agent readiness 17.8** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.9** — Government & Public Sector
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/federal-bureau-of-investigation/](https://apis.io/providers/federal-bureau-of-investigation/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Federal Bureau of Investigation: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/federal-bureau-of-investigation/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
